@@ -3,7 +3,7 @@
 $host = 'aws-0-ap-southeast-1.pooler.supabase.com';
 $dbname = 'postgres';
 $username = 'jmjmrwhybxneqratrigj';
-$password = 'N0vian-putRi';
+$password = 'N0vianputRi';
 $port = '6543';
 
 // Mencoba untuk membuat koneksi menggunakan PDO

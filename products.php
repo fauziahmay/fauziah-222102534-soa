@@ -2,10 +2,9 @@
 // Koneksi ke database PostgreSQL
 $host = 'aws-0-ap-southeast-1.pooler.supabase.com';
 $dbname = 'postgres';
-$username = 'jmjmrwhybxneqratrigj';
-$password = 'N0vianputRi';
+$username = 'postgres.jmjmrwhybxneqratrigj';
+$password = 'KijaTktGp7HtKPNb';
 $port = '6543';
-
 // Mencoba untuk membuat koneksi menggunakan PDO
 try {
     $conn = new PDO("pgsql:host=$host;port=$port;dbname=$dbname", $username, $password);
@@ -62,12 +61,6 @@ try {
                 text-align: center;
                 line-height: 30px;
             }
-            .action-buttons .edit {
-                background-color: #4CAF50; /* Hijau untuk edit */
-            }
-            .action-buttons .delete {
-                background-color: #f44336; /* Merah untuk hapus */
-            }
             .back-button {
                 background-color: #d17070;
                 color: white;
@@ -91,7 +84,6 @@ try {
                 <th>Description</th>
                 <th>Price</th>
                 <th>Category ID</th>
-                <th>Action</th>
             </tr>";
 
     // Mengambil hasil query dan menampilkannya
@@ -102,16 +94,6 @@ try {
         echo "<td>" . htmlspecialchars($row['description']) . "</td>";
         echo "<td>" . htmlspecialchars($row['price']) . "</td>";
         echo "<td>" . htmlspecialchars($row['categori']) . "</td>";
-        echo "<td>
-                <div class='action-buttons'>
-                    <a href='edit_product.php?id=" . $row['id'] . "' class='edit'>
-                        <i class='fas fa-pencil-alt'></i>
-                    </a>
-                    <a class='delete' href='delete_product.php?id=" . $row['id'] . "' onclick=\"return confirm('Apakah Anda yakin ingin menghapus produk ini?');\">
-                        <i class='fas fa-trash'></i>
-                    </a>
-                </div>
-              </td>";
         echo "</tr>";
     }
 
